@@ -1,6 +1,6 @@
 # Link to goinfre
 - Create symbolic links to the large, benevolent goinfre directory of caching files that pile up in your home folder.
-- **If you want to move to a different seat in 42 cluster, It may be necessary to run again link.sh.** ***(Because it causes a dead symbolic link!)***
+- **If you moved to a different seat in 42 cluster, You will want to run link.sh again.** ***(Moving seat may causes a dead symbolic link!)***
 
 
 
