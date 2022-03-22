@@ -30,7 +30,7 @@ function link() {
 	SRCPATH="$HOME_PREFIX"'/'"$LINKNAME"
 	DESTPATH="$PREFIX"'/'"$LINKNAME"
 
-	if [ ! -d "$SRCPATH" ]
+	if [ ! -L "$SRCPATH" ] && [ ! -d "$SRCPATH" ]
 	then
 		echo "Not exists link name: $LINKNAME ... skipping.."
 		return
@@ -39,10 +39,14 @@ function link() {
 	printf "[%s] \n" "$LINKNAME"
 
 	# Create directory if not exists
-	mkdir -p "$DESTPATH" 2>&1 > /dev/null
+	mkdir -p "$DESTPATH"
 
 	# Copy and merging if any caches already exist.
-	copy_and_merge "$SRCPATH" "$DESTPATH"
+	
+	if [ -d "$SRCPATH" ]
+	then
+		copy_and_merge "$SRCPATH" "$DESTPATH"
+	fi
 
 	echo "Linking.."
 
