@@ -42,7 +42,7 @@ function link() {
 	mkdir -p "$DESTPATH"
 
 	# Copy and merging if any caches already exist.
-	
+
 	if [ -d "$SRCPATH" ]
 	then
 		copy_and_merge "$SRCPATH" "$DESTPATH"
@@ -75,4 +75,6 @@ link "Library/Caches/com.hnc.Discord.ShipIt"
 link "Library/Caches/Google"
 link "Library/Caches/com.microsoft.VSCode"
 link "Library/Caches/com.microsoft.VSCode.ShipIt"
+link "Library/Caches/com.bitwarden.desktop"
+link "Library/Caches/com.bitwarden.desktop.ShipIt"
 link "Library/Caches/Firefox"
